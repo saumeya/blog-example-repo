@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-team2
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
