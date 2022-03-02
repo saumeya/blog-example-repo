@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: team-c
+
+bases:
+- ../../base
+
+patches:
+- target:
+    kind: Namespace
+    name: default-dev
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: team-c
