@@ -14,3 +14,17 @@ patches:
     - op: replace
       path: /metadata/name
       value: team-c
+- target:
+    kind: ResourceQuota
+    name: resource-quota
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: quota-team-c
+- target:
+    kind: LimitRange
+    name: limit-range
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: limit-team-c

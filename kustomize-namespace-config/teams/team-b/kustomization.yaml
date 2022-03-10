@@ -15,9 +15,19 @@ patches:
       path: /metadata/name
       value: team-b
 - target:
+    kind: ResourceQuota
+    name: resource-quota
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: quota-team-b
+- target:
     kind: LimitRange
     name: limit-range
   patch: |-
+    - op: replace
+      path: /metadata/name
+      value: limit-team-b
     - op: replace
       path: /spec/limits/0/defaultRequest/cpu
       value: 150m

@@ -19,12 +19,18 @@ patches:
     name: resource-quota
   patch: |-
     - op: replace
+      path: /metadata/name
+      value: quota-team-a
+    - op: replace
       path: /spec/hard/limits.cpu
       value: 1 
-- target:
-    kind: ResourceQuota
-    name: resource-quota
-  patch: |-
     - op: replace
       path: /spec/hard/services
       value: 10 
+- target:
+    kind: LimitRange
+    name: limit-range
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: limit-team-a
